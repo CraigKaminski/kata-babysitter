@@ -1,0 +1,23 @@
+{
+  "name": "kata-babysitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CraigKaminski/kata-babysitter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CraigKaminski/kata-babysitter/issues"
+  },
+  "homepage": "https://github.com/CraigKaminski/kata-babysitter#readme",
+  "dependencies": {
+    "jasmine": "^3.1.0"
+  }
+}
