@@ -103,4 +103,27 @@ describe('bedToMidnight', function() {
     var endTime = 10;
     expect(bedToMidnight(startTime, bedtime, endTime)).toBe(1);
   });
+
+  describe('Should return 0', function() {
+    it('if bedtime is after midnight', function() {
+      var startTime = 10;
+      var bedtime = 1;
+      var endTime = 2;
+      expect(bedToMidnight(startTime, bedtime, endTime)).toBe(0);
+    });
+
+    it('if start-time is after midnight', function() {
+      var startTime = 1;
+      var bedtime = 8;
+      var endTime = 2;
+      expect(bedToMidnight(startTime, bedtime, endTime)).toBe(0);
+    });
+
+    it('if end-time is before bedtime', function() {
+      var startTime = 7;
+      var bedtime = 10;
+      var endTime = 9;
+      expect(bedToMidnight(startTime, bedtime, endTime)).toBe(0);
+    });
+  });
 });
