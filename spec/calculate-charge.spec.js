@@ -96,4 +96,11 @@ describe('bedToMidnight', function() {
     var endTime = 10;
     expect(bedToMidnight(startTime, bedtime, endTime)).toBe(2);
   });
+  
+  it('Should return hours between start-time and end-time for combination b s e m', function() {
+    var startTime = 9;
+    var bedtime = 7;
+    var endTime = 10;
+    expect(bedToMidnight(startTime, bedtime, endTime)).toBe(1);
+  });
 });
