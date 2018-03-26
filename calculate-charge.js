@@ -6,7 +6,12 @@
 
 // Calculate hours between start-time and bedtime
 function startToBed(startTime, bedtime) {
-  return bedtime - startTime;
+  // if Bedtime after midnight
+  if (bedtime < 5) {
+    return 12 - startTime;
+  } else {
+    return bedtime - startTime;
+  }
 }
 
 // Calculate hours between bedtime and midnight
