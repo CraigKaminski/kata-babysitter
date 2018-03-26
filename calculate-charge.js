@@ -91,3 +91,16 @@ b s m e
 s b e m
 b s e m
 */
+
+/*
+All possible combinations where end-time is after midnight
+(This is for calculating hours between midnight and end-time)
+s b m e
+s m b e
+b s m e
+b m s e
+s m e b
+m b s e
+m s b e
+m s e b
+*/
