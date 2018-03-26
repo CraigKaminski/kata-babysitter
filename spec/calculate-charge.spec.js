@@ -143,4 +143,11 @@ describe('midnightToEnd', function() {
     var endTime = 3;
     expect(midnightToEnd(startTime, bedtime, endTime)).toBe(2);
   });
+
+  it('Should return 0 if end-time is before midnight', function() {
+    var startTime = 6;
+    var bedtime = 8;
+    var endTime = 11;
+    expect(midnightToEnd(startTime, bedtime, endTime)).toBe(0);
+  });
 });
