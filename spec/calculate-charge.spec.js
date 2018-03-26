@@ -56,4 +56,20 @@ describe('startToBed', function() {
       expect(startToBed(startTime, bedtime, endTime)).toBe(4);
     });
   });
+
+  describe('Should return 0', function() {
+    it('if start-time is after bedtime', function() {
+      var startTime = 10;
+      var bedtime = 9;
+      var endTime = 11;
+      expect(startToBed(startTime, bedtime, endTime)).toBe(0);
+    });
+
+    it('if start-time is after midnight', function() {
+      var startTime = 1;
+      var bedtime = 9;
+      var endTime = 11;
+      expect(startToBed(startTime, bedtime, endTime)).toBe(0);
+    });
+  });
 });
