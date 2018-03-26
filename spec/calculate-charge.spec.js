@@ -1,4 +1,5 @@
 var calculateCharge = require('../calculate-charge');
+var bedToMidnight = calculateCharge.bedToMidnight;
 var startToBed = calculateCharge.startToBed;
 
 /*
@@ -71,5 +72,14 @@ describe('startToBed', function() {
       var endTime = 11;
       expect(startToBed(startTime, bedtime, endTime)).toBe(0);
     });
+  });
+});
+
+describe('bedToMidnight', function() {
+  it('should return hours between bedtime and midnight for combination s b m e', function() {
+    var startTime = 7;
+    var bedtime = 8;
+    var endTime = 1;
+    expect(bedToMidnight(startTime, bedtime, endTime)).toBe(4);
   });
 });
