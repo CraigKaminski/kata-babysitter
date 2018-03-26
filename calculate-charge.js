@@ -46,7 +46,11 @@ function bedToMidnight(startTime, bedtime, endTime) {
 
 // Calculate hours between midnight and end-time
 function midnightToEnd(startTime, bedtime, endTime) {
-  return endTime;
+  if (startTime < 5) {
+    return endTime - startTime;
+  } else {
+    return endTime;
+  }
 }
 
 // Calculate charge for each time period and print sum of charges.
