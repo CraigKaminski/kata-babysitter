@@ -23,12 +23,16 @@ function startToBed(startTime, bedtime, endTime) {
 }
 
 // Calculate hours between bedtime and midnight
+function bedToMidnight(startTime, bedtime, endTime) {
+  return 12 - bedtime;
+}
 
 // Calculate hours between midnight and end-time
 
 // Calculate charge for each time period and print sum of charges.
 
 module.exports = {
+  bedToMidnight: bedToMidnight,
   startToBed: startToBed
 };
 
