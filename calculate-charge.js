@@ -5,9 +5,13 @@
 // Prompt end-time
 
 // Calculate hours between start-time and bedtime
-function startToBed(startTime, bedtime) {
+function startToBed(startTime, bedtime, endTime) {
+  // if end-time is before bedtime and midnight
+  if ((endTime < 12 && endTime > 4) && (endTime < bedtime || bedtime < 4)) {
+    return endTime - startTime;
+  }
   // if Bedtime after midnight
-  if (bedtime < 5) {
+  else if (bedtime < 5) {
     return 12 - startTime;
   } else {
     return bedtime - startTime;
