@@ -9,21 +9,21 @@ const midnightToEndRate = 16;
 
 // Prompt start-time
 function prompStartTime() {
-  rl.question('start time: ', (startTime) => {
+  rl.question('start time (hour only): ', (startTime) => {
     promptBedtime(startTime);
   });
 }
 
 // Prompt bedtime
 function promptBedtime(startTime) {
-  rl.question('bedtime: ', (bedtime) => {
+  rl.question('bedtime (hour only): ', (bedtime) => {
     promptEndTime(startTime, bedtime);
   });
 }
 
 // Prompt end-time
 function promptEndTime(startTime, bedtime) {
-  rl.question('end time: ', (endTime) => {
+  rl.question('end time (hour only): ', (endTime) => {
     const startTimeInt = parseInt(startTime, 10);
     const bedtimeInt = parseInt(bedtime, 10);
     const endTimeInt = parseInt(endTime, 10);
@@ -97,7 +97,7 @@ function calculateCharge(startTime, bedtime, endTime) {
   const totalCharge = startToBedRate * startToBedHours +
                bedToMidnightRate * bedToMidnightHours +
                midnightToEndRate * midnightToEndHours;
-  console.log('total charge: ' + totalCharge);
+  console.log('total charge: $' + totalCharge);
 }
 
 if (require.main === module) {
