@@ -1,6 +1,7 @@
 const readline = require('readline');
 
-var rl;
+// readline interface
+let rl;
 
 const startToBedRate = 12
 const bedToMidnightRate = 8;
@@ -23,9 +24,9 @@ function promptBedtime(startTime) {
 // Prompt end-time
 function promptEndTime(startTime, bedtime) {
   rl.question('end time: ', (endTime) => {
-    var startTimeInt = parseInt(startTime, 10);
-    var bedtimeInt = parseInt(bedtime, 10);
-    var endTimeInt = parseInt(endTime, 10);
+    const startTimeInt = parseInt(startTime, 10);
+    const bedtimeInt = parseInt(bedtime, 10);
+    const endTimeInt = parseInt(endTime, 10);
     calculateCharge(startTimeInt, bedtimeInt, endTimeInt);
     rl.close();
   });
@@ -87,13 +88,13 @@ function midnightToEnd(startTime, bedtime, endTime) {
 
 // Calculate charge for each time period and print sum of charges.
 function calculateCharge(startTime, bedtime, endTime) {
-  var startToBedHours = startToBed(startTime, bedtime, endTime);
-  var bedToMidnightHours = bedToMidnight(startTime, bedtime, endTime);
-  var midnightToEndHours = midnightToEnd(startTime, bedtime, endTime);
+  const startToBedHours = startToBed(startTime, bedtime, endTime);
+  const bedToMidnightHours = bedToMidnight(startTime, bedtime, endTime);
+  const midnightToEndHours = midnightToEnd(startTime, bedtime, endTime);
   // console.log('start to bed: '+ startToBedHours);
   // console.log('bed to midnight: ' + bedToMidnightHours);
   // console.log('midnight to end: ' + midnightToEndHours);
-  var totalCharge = startToBedRate * startToBedHours +
+  const totalCharge = startToBedRate * startToBedHours +
                bedToMidnightRate * bedToMidnightHours +
                midnightToEndRate * midnightToEndHours;
   console.log('total charge: ' + totalCharge);
