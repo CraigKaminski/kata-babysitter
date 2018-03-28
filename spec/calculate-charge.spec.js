@@ -144,10 +144,19 @@ describe('midnightToEnd', function() {
     expect(midnightToEnd(startTime, bedtime, endTime)).toBe(2);
   });
 
-  it('Should return 0 if end-time is before midnight', function() {
-    const startTime = 6;
-    const bedtime = 8;
-    const endTime = 11;
-    expect(midnightToEnd(startTime, bedtime, endTime)).toBe(0);
+  describe('Should return 0', function() {
+    it('if bedtime is before midnight', function() {
+      const startTime = 6;
+      const bedtime = 8;
+      const endTime = 11;
+      expect(midnightToEnd(startTime, bedtime, endTime)).toBe(0);
+    });
+
+    it('if bedtime is equal to midnight', function() {
+      const startTime = 6;
+      const bedtime = 8;
+      const endTime = 12;
+      expect(midnightToEnd(startTime, bedtime, endTime)).toBe(0);
+    });
   });
 });
